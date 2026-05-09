@@ -46,7 +46,9 @@ Because NMF operates exclusively on magnitude spectrograms, raw reconstruction y
 
 Performance was quantitatively evaluated using the Blind Source Separation (BSS) Evaluation toolkit (SDR, SIR, SAR). 
 
-*(Note: Insert your `bss_evaluation_metrics.png` and `activation_plt.pgf/png` in the assets folder and link them here)*
+<img width="480" height="192" alt="image" src="https://github.com/user-attachments/assets/faae7d45-9cb4-4b40-9214-225bb0730393" />
+
+<img width="480" height="258" alt="image" src="https://github.com/user-attachments/assets/d4fc6188-7cd8-4904-822c-bb75b62ec53e" />
 
 **Key Findings:**
 1. **The Sparsity Tradeoff:** Applying extreme $L_1$ penalties to drums successfully rejected harmonic bleed (increasing the Source-to-Interference Ratio, SIR), but truncated natural acoustic decay, resulting in a lower Source-to-Artifact Ratio (SAR).
