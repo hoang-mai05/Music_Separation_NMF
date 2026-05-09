@@ -29,7 +29,7 @@ The traditional NMF objective function treats each time frame as an independent 
 I extracted isolated stems from the **MUSDB18 dataset** to train source-specific basis matrices ($B$). To mitigate basis coherence, I enforced explicit orthogonality by applying high-pass filtering to the vocal and harmonic dictionaries prior to separation.
 
 ### 2. Decoupled Regularization (The Optimization Stage)
-During separation, the global dictionary is held constant while the activation matrix ($W$) is optimized using modified multiplicative update rules to minimize the Kullback-Leibler (KL) divergence. We appended instrument-specific penalties:
+During separation, the global dictionary is held constant while the activation matrix ($W$) is optimized using modified multiplicative update rules to minimize the Kullback-Leibler (KL) divergence. I appended instrument-specific penalties:
 * **Drums (Transience):** An $L_1$ sparsity penalty to suppress the noise floor and enforce rapid acoustic decay.
 * **Bass/Vocals (Sustain):** A variance-normalized Temporal Continuity (TC) penalty to enforce smooth, connected note envelopes without altering activation scale.
 
@@ -38,7 +38,7 @@ The modified update rule strictly separates positive and negative regularization
 $$W_{new} = W_{old} \odot \frac{[\nabla_W C_{base}]^- + [\nabla_W J_{penalty}]^-}{[\nabla_W C_{base}]^+ + [\nabla_W J_{penalty}]^+}$$
 
 ### 3. Phase Recovery (Wiener Filtering)
-Because NMF operates exclusively on magnitude spectrograms, raw reconstruction yields "robotic" phase artifacts. We utilized the NMF estimate to construct a soft Wiener mask, which was applied via Hadamard product to the original complex STFT, recovering the original phase prior to ISTFT conversion.
+Because NMF operates exclusively on magnitude spectrograms, raw reconstruction yields "robotic" phase artifacts. I utilized the NMF estimate to construct a soft Wiener mask, which was applied via Hadamard product to the original complex STFT, recovering the original phase prior to ISTFT conversion.
 
 ---
 
