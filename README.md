@@ -45,12 +45,14 @@ Because NMF operates exclusively on magnitude spectrograms, raw reconstruction y
 ## Results & Insights
 
 Performance was quantitatively evaluated using the Blind Source Separation (BSS) Evaluation toolkit (SDR, SIR, SAR). 
+
 <p align="center">
   <img width="480" height="192" alt="image" src="https://github.com/user-attachments/assets/faae7d45-9cb4-4b40-9214-225bb0730393" />
 </p>
 <p align="center">
   <img width="480" height="258" alt="image" src="https://github.com/user-attachments/assets/d4fc6188-7cd8-4904-822c-bb75b62ec53e" />
 </p>
+
 **Key Findings:**
 1. **The Sparsity Tradeoff:** Applying extreme $L_1$ penalties to drums successfully rejected harmonic bleed (increasing the Source-to-Interference Ratio, SIR), but truncated natural acoustic decay, resulting in a lower Source-to-Artifact Ratio (SAR).
 2. **Interpretability over Black-Boxes:** While modern deep learning architectures (like Bi-LSTMs or U-Nets) achieve superior quantitative SDR, this decoupled NMF approach provides explicit, mathematically provable intuition linking matrix operations directly to physical acoustic traits.
