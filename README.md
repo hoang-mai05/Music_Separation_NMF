@@ -12,7 +12,7 @@ Unlike standard NMF architectures that apply uniform constraints across all sour
 
 ---
 
-## 🎧 Audio Examples
+## Audio Examples
 
 *(Note: Replace these links with the relative paths to your actual audio files)*
 * [Original Mixture](./audio_samples/mixture.wav)
@@ -21,7 +21,7 @@ Unlike standard NMF architectures that apply uniform constraints across all sour
 
 ---
 
-## 🧠 Methodology
+## Methodology
 
 The traditional NMF objective function treats each time frame as an independent observation, ignoring the highly correlated nature of music. To address this, I implemented a three-stage pipeline:
 
@@ -42,7 +42,7 @@ Because NMF operates exclusively on magnitude spectrograms, raw reconstruction y
 
 ---
 
-## 📊 Results & Insights
+## Results & Insights
 
 Performance was quantitatively evaluated using the Blind Source Separation (BSS) Evaluation toolkit (SDR, SIR, SAR). 
 
@@ -54,10 +54,11 @@ Performance was quantitatively evaluated using the Blind Source Separation (BSS)
 
 ---
 
-## 🚀 How to Run
+## Execution Instructions
 
 ### Prerequisites
 Download the MUSDB18 dataset
+
 Clone the repository and install the required dependencies:
 ```bash
 git clone [https://github.com/yourusername/NMF-Audio-Separation.git](https://github.com/yourusername/NMF-Audio-Separation.git)
