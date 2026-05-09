@@ -23,10 +23,10 @@ Unlike standard NMF architectures that apply uniform constraints across all sour
 
 ## 🧠 Methodology
 
-The traditional NMF objective function treats each time frame as an independent observation, ignoring the highly correlated nature of music. To address this, we implemented a three-stage pipeline:
+The traditional NMF objective function treats each time frame as an independent observation, ignoring the highly correlated nature of music. To address this, I implemented a three-stage pipeline:
 
 ### 1. Supervised Dictionary Training & Coherence Mitigation
-We extracted isolated stems from the **MUSDB18 dataset** to train source-specific basis matrices ($B$). To mitigate basis coherence (energy leakage between overlapping frequency subspaces), we enforced explicit orthogonality by applying high-pass filtering to the vocal and harmonic dictionaries prior to separation.
+I extracted isolated stems from the **MUSDB18 dataset** to train source-specific basis matrices ($B$). To mitigate basis coherence, I enforced explicit orthogonality by applying high-pass filtering to the vocal and harmonic dictionaries prior to separation.
 
 ### 2. Decoupled Regularization (The Optimization Stage)
 During separation, the global dictionary is held constant while the activation matrix ($W$) is optimized using modified multiplicative update rules to minimize the Kullback-Leibler (KL) divergence. We appended instrument-specific penalties:
@@ -57,6 +57,7 @@ Performance was quantitatively evaluated using the Blind Source Separation (BSS)
 ## 🚀 How to Run
 
 ### Prerequisites
+Download the MUSDB18 dataset
 Clone the repository and install the required dependencies:
 ```bash
 git clone [https://github.com/yourusername/NMF-Audio-Separation.git](https://github.com/yourusername/NMF-Audio-Separation.git)
